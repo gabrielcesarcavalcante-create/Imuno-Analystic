@@ -1,0 +1,346 @@
+{
+  "dataset": "ProteinAnalytic glioma research reference sequences",
+  "species": "Homo sapiens",
+  "assembly": "GRCh38; MANE Select v1.5; NCBI RefSeq",
+  "retrieved_utc": "2026-10-16T22:01:18.923297+00:00",
+  "panel_size": 32,
+  "records": [
+    {
+      "symbol": "IDH1",
+      "role": "IDH hotspot; defining molecular class",
+      "category": "classification",
+      "gene_id": "GeneID:3417",
+      "refseq_rna": "NM_005896.4",
+      "refseq_protein": "NP_005887.2",
+      "rna_length": 2318,
+      "protein_length": 414
+    },
+    {
+      "symbol": "IDH2",
+      "role": "IDH hotspot; defining molecular class",
+      "category": "classification",
+      "gene_id": "GeneID:3418",
+      "refseq_rna": "NM_002168.4",
+      "refseq_protein": "NP_002159.2",
+      "rna_length": 2658,
+      "protein_length": 452
+    },
+    {
+      "symbol": "ATRX",
+      "role": "Astrocytoma IDH-mutant; chromatin remodeling",
+      "category": "classification",
+      "gene_id": "GeneID:546",
+      "refseq_rna": "NM_000489.6",
+      "refseq_protein": "NP_000480.3",
+      "rna_length": 11165,
+      "protein_length": 2492
+    },
+    {
+      "symbol": "TP53",
+      "role": "Astrocytoma IDH-mutant / H3-altered contexts",
+      "category": "classification",
+      "gene_id": "GeneID:7157",
+      "refseq_rna": "NM_000546.6",
+      "refseq_protein": "NP_000537.3",
+      "rna_length": 2512,
+      "protein_length": 393
+    },
+    {
+      "symbol": "CIC",
+      "role": "Oligodendroglioma IDH-mutant, 1p/19q-codeleted",
+      "category": "classification",
+      "gene_id": "GeneID:23152",
+      "refseq_rna": "NM_001386298.1",
+      "refseq_protein": "NP_001373227.1",
+      "rna_length": 8299,
+      "protein_length": 2517
+    },
+    {
+      "symbol": "FUBP1",
+      "role": "Oligodendroglioma; recurrent alteration",
+      "category": "classification",
+      "gene_id": "GeneID:8880",
+      "refseq_rna": "NM_003902.5",
+      "refseq_protein": "NP_003893.2",
+      "rna_length": 6714,
+      "protein_length": 644
+    },
+    {
+      "symbol": "TERT",
+      "role": "Promoter hotspot in IDH-wt GBM/oligodendroglioma; mRNA/protein is not the promoter",
+      "category": "promoter-specific",
+      "gene_id": "GeneID:7015",
+      "refseq_rna": "NM_198253.3",
+      "refseq_protein": "NP_937983.2",
+      "rna_length": 4039,
+      "protein_length": 1132
+    },
+    {
+      "symbol": "EGFR",
+      "role": "Amplification/variants including EGFRvIII; GBM",
+      "category": "target/diagnostic",
+      "gene_id": "GeneID:1956",
+      "refseq_rna": "NM_005228.5",
+      "refseq_protein": "NP_005219.2",
+      "rna_length": 9905,
+      "protein_length": 1210
+    },
+    {
+      "symbol": "CDKN2A",
+      "role": "Homozygous deletion informs grade in IDH-mutant astrocytoma",
+      "category": "classification",
+      "gene_id": "GeneID:1029",
+      "refseq_rna": "NM_000077.5",
+      "refseq_protein": "NP_000068.1",
+      "rna_length": 978,
+      "protein_length": 156
+    },
+    {
+      "symbol": "CDKN2B",
+      "role": "Co-deletion with CDKN2A; locus-level assay",
+      "category": "classification",
+      "gene_id": "GeneID:1030",
+      "refseq_rna": "NM_004936.4",
+      "refseq_protein": "NP_004927.2",
+      "rna_length": 3853,
+      "protein_length": 138
+    },
+    {
+      "symbol": "MGMT",
+      "role": "Promoter methylation; treatment-context biomarker",
+      "category": "epigenetic",
+      "gene_id": "GeneID:4255",
+      "refseq_rna": "NM_002412.5",
+      "refseq_protein": "NP_002403.3",
+      "rna_length": 4678,
+      "protein_length": 207
+    },
+    {
+      "symbol": "H3-3A",
+      "role": "H3 K27/G34 variants; pediatric-type glioma contexts",
+      "category": "histone",
+      "gene_id": "GeneID:3020",
+      "refseq_rna": "NM_002107.7",
+      "refseq_protein": "NP_002098.1",
+      "rna_length": 1070,
+      "protein_length": 136
+    },
+    {
+      "symbol": "ACVR1",
+      "role": "Alterations in a subset of diffuse midline glioma",
+      "category": "pediatric",
+      "gene_id": "GeneID:90",
+      "refseq_rna": "NM_001111067.4",
+      "refseq_protein": "NP_001104537.1",
+      "rna_length": 3332,
+      "protein_length": 509
+    },
+    {
+      "symbol": "PDGFRA",
+      "role": "Amplification/alteration; glioma signaling driver subset",
+      "category": "target",
+      "gene_id": "GeneID:5156",
+      "refseq_rna": "NM_006206.6",
+      "refseq_protein": "NP_006197.1",
+      "rna_length": 6378,
+      "protein_length": 1089
+    },
+    {
+      "symbol": "EZHIP",
+      "role": "Overexpression/alteration in H3 K27-altered midline glioma",
+      "category": "pediatric",
+      "gene_id": "GeneID:340602",
+      "refseq_rna": "NM_203407.3",
+      "refseq_protein": "NP_981952.1",
+      "rna_length": 1896,
+      "protein_length": 503
+    },
+    {
+      "symbol": "BRAF",
+      "role": "V600E/fusions; subset-specific therapeutic relevance",
+      "category": "target",
+      "gene_id": "GeneID:673",
+      "refseq_rna": "NM_004333.6",
+      "refseq_protein": "NP_004324.2",
+      "rna_length": 6459,
+      "protein_length": 766
+    },
+    {
+      "symbol": "NF1",
+      "role": "MAPK pathway; NF1-associated/pediatric and GBM subsets",
+      "category": "pathway/predisposition",
+      "gene_id": "GeneID:4763",
+      "refseq_rna": "NM_001042492.3",
+      "refseq_protein": "NP_001035957.1",
+      "rna_length": 12373,
+      "protein_length": 2839
+    },
+    {
+      "symbol": "PTEN",
+      "role": "PI3K pathway loss; recurrent tumor suppressor alteration",
+      "category": "pathway",
+      "gene_id": "GeneID:5728",
+      "refseq_rna": "NM_000314.8",
+      "refseq_protein": "NP_000305.3",
+      "rna_length": 8515,
+      "protein_length": 403
+    },
+    {
+      "symbol": "RB1",
+      "role": "Cell-cycle pathway alteration",
+      "category": "pathway",
+      "gene_id": "GeneID:5925",
+      "refseq_rna": "NM_000321.3",
+      "refseq_protein": "NP_000312.2",
+      "rna_length": 4768,
+      "protein_length": 928
+    },
+    {
+      "symbol": "PIK3CA",
+      "role": "PI3K pathway hotspot alterations",
+      "category": "pathway/target",
+      "gene_id": "GeneID:5290",
+      "refseq_rna": "NM_006218.4",
+      "refseq_protein": "NP_006209.2",
+      "rna_length": 9259,
+      "protein_length": 1068
+    },
+    {
+      "symbol": "PIK3R1",
+      "role": "PI3K pathway alterations",
+      "category": "pathway",
+      "gene_id": "GeneID:5295",
+      "refseq_rna": "NM_181523.3",
+      "refseq_protein": "NP_852664.1",
+      "rna_length": 6975,
+      "protein_length": 724
+    },
+    {
+      "symbol": "CDK4",
+      "role": "Amplification/cell-cycle axis",
+      "category": "target",
+      "gene_id": "GeneID:1019",
+      "refseq_rna": "NM_000075.4",
+      "refseq_protein": "NP_000066.1",
+      "rna_length": 1865,
+      "protein_length": 303
+    },
+    {
+      "symbol": "MDM2",
+      "role": "Amplification/p53 pathway axis",
+      "category": "pathway",
+      "gene_id": "GeneID:4193",
+      "refseq_rna": "NM_002392.6",
+      "refseq_protein": "NP_002383.2",
+      "rna_length": 7490,
+      "protein_length": 497
+    },
+    {
+      "symbol": "MDM4",
+      "role": "Amplification/p53 pathway axis",
+      "category": "pathway",
+      "gene_id": "GeneID:4194",
+      "refseq_rna": "NM_002393.5",
+      "refseq_protein": "NP_002384.2",
+      "rna_length": 10050,
+      "protein_length": 490
+    },
+    {
+      "symbol": "FGFR1",
+      "role": "Mutation/fusion/amplification in selected gliomas",
+      "category": "target",
+      "gene_id": "GeneID:2260",
+      "refseq_rna": "NM_023110.3",
+      "refseq_protein": "NP_075598.2",
+      "rna_length": 5697,
+      "protein_length": 822
+    },
+    {
+      "symbol": "FGFR3",
+      "role": "FGFR3-TACC3 fusion in a subset of IDH-wt glioma",
+      "category": "target/fusion",
+      "gene_id": "GeneID:2261",
+      "refseq_rna": "NM_000142.5",
+      "refseq_protein": "NP_000133.1",
+      "rna_length": 4301,
+      "protein_length": 806
+    },
+    {
+      "symbol": "NTRK1",
+      "role": "Rare actionable fusion; fusion context must be verified",
+      "category": "target/fusion",
+      "gene_id": "GeneID:4914",
+      "refseq_rna": "NM_002529.4",
+      "refseq_protein": "NP_002520.2",
+      "rna_length": 2669,
+      "protein_length": 796
+    },
+    {
+      "symbol": "NTRK2",
+      "role": "Rare actionable fusion; fusion context must be verified",
+      "category": "target/fusion",
+      "gene_id": "GeneID:4915",
+      "refseq_rna": "NM_006180.6",
+      "refseq_protein": "NP_006171.2",
+      "rna_length": 8666,
+      "protein_length": 838
+    },
+    {
+      "symbol": "NTRK3",
+      "role": "Rare actionable fusion; fusion context must be verified",
+      "category": "target/fusion",
+      "gene_id": "GeneID:4916",
+      "refseq_rna": "NM_001012338.3",
+      "refseq_protein": "NP_001012338.1",
+      "rna_length": 20018,
+      "protein_length": 839
+    },
+    {
+      "symbol": "MET",
+      "role": "Rearrangement/amplification in selected gliomas",
+      "category": "target",
+      "gene_id": "GeneID:4233",
+      "refseq_rna": "NM_000245.4",
+      "refseq_protein": "NP_000236.2",
+      "rna_length": 6822,
+      "protein_length": 1390
+    },
+    {
+      "symbol": "MYB",
+      "role": "MYB/MYBL1 alterations in pediatric low-grade glioma spectrum",
+      "category": "pediatric",
+      "gene_id": "GeneID:4602",
+      "refseq_rna": "NM_001130173.2",
+      "refseq_protein": "NP_001123645.1",
+      "rna_length": 3684,
+      "protein_length": 761
+    },
+    {
+      "symbol": "NOTCH1",
+      "role": "Reported in oligodendroglioma molecular context",
+      "category": "research",
+      "gene_id": "GeneID:4851",
+      "refseq_rna": "NM_017617.5",
+      "refseq_protein": "NP_060087.3",
+      "rna_length": 9568,
+      "protein_length": 2555
+    }
+  ],
+  "non_fasta_biomarkers": [
+    "1p/19q whole-arm codeletion",
+    "whole chromosome 7 gain / chromosome 10 loss",
+    "MGMT promoter methylation",
+    "TERT promoter variants",
+    "EGFR amplification",
+    "DNA methylation class"
+  ],
+  "cautions": [
+    "Curated research panel, not a universal clinical panel.",
+    "Reference FASTAs are not patient tumor variants or neoantigens.",
+    "MANE Select is one representative transcript and may omit relevant isoforms.",
+    "TERT biomarker is promoter sequence/variant, not mRNA/protein FASTA.",
+    "MGMT predictive biomarker concerns promoter methylation; reference sequence does not provide methylation status.",
+    "Variants, fusions, copy number, expression and methylation require separate assay-specific data.",
+    "This bundle does not predict T-cell response, treatment benefit, or safety."
+  ]
+}

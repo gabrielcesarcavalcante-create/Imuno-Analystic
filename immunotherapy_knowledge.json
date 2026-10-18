@@ -1,0 +1,47 @@
+{
+  "schema": "proteinanalytic.immunotherapy-knowledge.v1",
+  "purpose": "Evidence map and workflow specification for research-stage tumor antigen prioritization; not a clinical decision support model.",
+  "workflows": [
+    {"step": 1, "name": "Clinical and specimen context", "inputs": ["glioma integrated diagnosis / WHO CNS context", "primary versus recurrent sample", "tumor purity", "tumor and matched-normal provenance", "consent and access tier"], "outputs": ["versioned sample manifest", "QC flags"], "pitfalls": ["histologic labels alone do not define molecular subtype", "spatial and temporal heterogeneity", "privacy and controlled-access data"]},
+    {"step": 2, "name": "Somatic event discovery", "inputs": ["paired tumor-normal WES/WGS", "RNA-seq", "structural variants / fusion calls", "copy-number data"], "outputs": ["somatic SNV/indel/SV/fusion/expressed-splice event candidates", "VAF and clonality confidence"], "pitfalls": ["germline contamination", "low purity", "subclonal mutations", "alignment artefacts", "RNA expression alone does not prove tumor specificity"]},
+    {"step": 3, "name": "Patient HLA genotype and antigen presentation machinery", "inputs": ["germline or tumor sequencing", "HLA allele calls", "HLA LOH/CNV", "B2M, TAP1/2, NLRC5 and HLA expression"], "outputs": ["allele-specific presentation context", "APM deficiency flags"], "pitfalls": ["HLA typing uncertainty", "allelic loss", "interferon-dependent and cell-state changes"]},
+    {"step": 4, "name": "Personalized source proteome and peptide candidates", "inputs": ["reference transcript/protein", "sample-specific variants", "fusion junctions", "expressed splice events", "noncanonical translation evidence"], "outputs": ["mutant-versus-wild-type peptide pairs with transcript/protein provenance"], "pitfalls": ["reference FASTA is not a tumor proteome", "isoform mismatch", "translation/frame errors", "noncanonical ORFs require strong evidence"]},
+    {"step": 5, "name": "Processing and HLA presentation", "inputs": ["candidate peptide and patient HLA", "tumor RNA/protein abundance", "proteasome/TAP features"], "outputs": ["separate estimates for processing, HLA binding/elution and complex stability"], "tools": ["IEDB/NetMHCpan", "MHCflurry", "MixMHCpred", "pVACtools"], "pitfalls": ["binder does not imply natural presentation", "predictors have allele-specific training coverage and calibration limits"]},
+    {"step": 6, "name": "Direct presentation evidence", "inputs": ["HLA immunopeptidomics LC-MS/MS", "spectral quality, decoys, FDR, matched controls"], "outputs": ["observed ligand evidence with assay-level confidence"], "pitfalls": ["MS non-detection is not proof of absence", "sample depth and abundance bias", "peptide identification and synthetic-spectrum confirmation standards"]},
+    {"step": 7, "name": "Tumor selectivity and normal-tissue risk", "inputs": ["matched normal DNA/RNA", "GTEx and tissue expression resources", "normal-tissue immunopeptidomes", "single-cell/spatial profiles when available"], "outputs": ["tumor-versus-normal evidence, expression breadth, on-target/off-tumor concern"], "pitfalls": ["bulk-average expression hides rare critical cell types", "tumor-associated antigens can be self-antigens", "brain cell types and developmental expression matter"]},
+    {"step": 8, "name": "T-cell recognition / immunogenicity", "inputs": ["pMHC evidence", "TCR repertoire or validated assay data", "peptide foreignness and wild-type cross-reactivity"], "outputs": ["research prioritization with uncertainty; never a claim that a lymphocyte will kill the tumor"], "pitfalls": ["TCR recognition is difficult to predict", "pMHC binding is only one necessary biological stage", "cross-reactivity and immune tolerance"]},
+    {"step": 9, "name": "Glioma-specific context", "inputs": ["WHO CNS type", "IDH status", "MGMT promoter methylation", "TERT promoter/EGFR amplification/+7/-10", "CDKN2A/B deletion", "H3 K27/G34, BRAF/FGFR/NTRK fusions as relevant"], "outputs": ["subtype-aware evidence cards"], "pitfalls": ["many markers are not antigens", "MGMT methylation and chromosome alterations cannot be represented by a coding FASTA", "glioma immune suppression, low/heterogeneous antigen presentation and CNS access"]},
+    {"step": 10, "name": "Validation and evidence governance", "inputs": ["orthogonal assay evidence", "external cohort validation", "versioned model/data provenance"], "outputs": ["auditable candidate report; calibrated uncertainty; review status"], "pitfalls": ["data leakage", "single-center bias", "retrospective benchmark optimism", "prediction must not select or prescribe patient therapy"]}
+  ],
+  "recommended_modules": [
+    {"name": "pVACtools", "use": "Open-source somatic variant-to-neoantigen workflows and annotation; verify supported predictors, versions, licenses and input assumptions."},
+    {"name": "NeoDisc", "use": "Published integrated proteogenomic neoantigen workflow; includes immunopeptidomics and antigen-presentation machinery context; consult paper/code availability and constraints."},
+    {"name": "IEDB / NetMHCpan", "use": "HLA binding/eluted ligand and processing-related predictions; interpret as distinct endpoint outputs."},
+    {"name": "MHCflurry", "use": "Open source peptide-MHC class I affinity/presentation prediction; evaluate allele coverage and calibration."},
+    {"name": "HLA typing", "use": "HLA-HD, OptiType or Polysolver may be considered based on assay/input type and validated pipeline; do not mix typing confidence with antigen scores."},
+    {"name": "Immunopeptidomics", "use": "MS-based direct ligand evidence; search personalized protein databases with decoys and strict spectrum/FDR validation."},
+    {"name": "Reference resources", "use": "NCBI RefSeq/MANE, UniProt, Ensembl/GENCODE, IEDB, HLA Ligand Atlas, GTEx, TCGA/GDC, CPTAC/PDC, GEO, CGGA, cBioPortal, DepMap, CIViC/Open Targets when licensing permits."}
+  ],
+  "score_policy": {
+    "do_not_combine_as_one_probability": ["HLA affinity", "natural presentation", "T-cell immunogenicity", "tumor selectivity", "clinical response"],
+    "recommended_display": ["each evidence axis separately", "uncertainty interval/calibration", "source/version/date", "assay-vs-prediction flag", "missing evidence / caveats"],
+    "forbidden_claim": "A single unvalidated percentage that a candidate antigen will treat glioma or activate a cytotoxic lymphocyte.",
+    "target_endpoints": ["measured IC50/Kd only when actual assay data is available", "pHLA ligand observation", "T-cell activation assay", "tumor killing assay", "clinical response: separate prospective validation"]
+  },
+  "data_governance": {
+    "storage_limit_mb": 30,
+    "current_reference_panel": "32 human glioma-associated genes, MANE Select v1.5, RefSeq RNA + protein where present",
+    "fasta_is_not": ["patient-specific sequence", "somatic variant call", "expression quantity", "copy number", "methylation", "peptide presentation", "therapeutic recommendation"],
+    "preserve": ["accession.version", "MANE release", "GRCh38 context", "retrieval timestamp", "data license", "analysis software/version", "sample provenance and consent"],
+    "privacy": "Do not upload identifiable patient or genomic data to public services without governance, consent and contractual review."
+  },
+  "references": [
+    {"title": "A comprehensive proteogenomic pipeline for neoantigen discovery to advance personalized cancer immunotherapy (NeoDisc)", "url": "https://www.nature.com/articles/s41587-024-02420-y", "year": 2024},
+    {"title": "Computational methods and data resources for predicting tumor neoantigens", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12222050/", "year": 2025},
+    {"title": "ESMO Precision Medicine Working Group recommendations on neoantigen prediction and clinical benefit", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7885309/", "year": 2020},
+    {"title": "IEDB Next-generation T-cell prediction tools", "url": "https://nextgen-tools.iedb.org/docs/tools/tcell/index.html", "year": 2024},
+    {"title": "NCBI MANE project", "url": "https://www.ncbi.nlm.nih.gov/refseq/MANE/", "year": 2026},
+    {"title": "Molecular Biomarker Testing for Diagnosis of Diffuse Gliomas (CAP guideline)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9311267/", "year": 2022},
+    {"title": "EANO guideline for molecular diagnostic tools in gliomas", "url": "https://academic.oup.com/neuro-oncology/article/25/10/1731/7189810", "year": 2023}
+  ]
+}
